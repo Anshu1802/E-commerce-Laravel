@@ -7,6 +7,10 @@ use Crypt;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Modelpage;
 use App\Models\User;
+// use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+use Jenssegers\Agent\Agent;
+use Illuminate\Support\Facades\Mail;
 
 class controllerpage extends Controller
 {
@@ -20,6 +24,14 @@ class controllerpage extends Controller
     {
 
         return view('createAccount');
+    }
+    
+
+    public function feedback()
+    {
+
+        return view ('feedback');
+
     }
 
     public function csubmit(Request $req)
@@ -44,6 +56,31 @@ class controllerpage extends Controller
          $registerpage->password=Hash::make($req['password']);
          $registerpage->save();
 
+
+
+
+
+         $data = [
+            'email' => $req['email'], 
+        ];
+
+
+       
+        $userHeading= "Greetings You have been successfully created new account with madhuram.com we will love to serve you our wonderfull products  ";
+        $user['to'] = $req['email'];                    //variable $USER
+       Mail::send('thankyoumessage' , $data, function($message) use ($user, $userHeading) {
+       $message->to($user['to']);
+       $message->subject($userHeading);
+        });
+
+        $userHeading= "Hello user hope you find website easy to use if anything issue with the site please rreport in feedback section in site";
+        $user['to'] = $req['email'];                    //variable $USER
+       Mail::send('thankyoumessage2' , $data, function($message) use ($user, $userHeading) {
+       $message->to($user['to']);
+       $message->subject($userHeading);
+        });
+      
+        return redirect('/');
 
     }
 
@@ -80,7 +117,7 @@ class controllerpage extends Controller
 
         // return view('/welcome');
 
-
+//
 
 
 

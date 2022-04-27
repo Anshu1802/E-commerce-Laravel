@@ -342,7 +342,7 @@ input[type=text]:placeholder {
     <div class="header">
       
       <div class="header-right">
-        <a href="#contact">Home</a>
+        
           <a class="active" href="{{ url('/createAccount') }}">Create Acoount</a>
       </div>
     </div>
