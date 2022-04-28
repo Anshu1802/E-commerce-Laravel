@@ -189,24 +189,24 @@ span.price {
 <body>
 
 
-    <?php   
-    use App\Http\Controllers\productcontroller; 
-    
-       if (Session::has('user')) 
-       {
-        $total=productcontroller::cartitem();
-       }
-    ?>
-    <div class="header">
-      <a href="{{ url('/logout') }}" class="logo">Logout</a>
-      <div class="header-right">
-        <a  href="{{ url('/homepage') }}">Home</a>
-        <a class="active" href="{{ url('/shop') }}">Shop</a>
-        <a href="{{ url('/feedback') }}">Feedback</a>
-        <a href="{{ url('/cartlist') }}">Cart <b>({{ $total }})</b></a>
-    
-      </div>
+  <?php   
+  use App\Http\Controllers\productcontroller; 
+  
+     if (Session::has('user')) 
+     {
+      $total=productcontroller::cartitem();
+     }
+  ?>
+  <div class="header">
+    <a href="{{ url('/logout') }}" class="logo">Logout</a>
+    <div class="header-right">
+      <a  href="{{ url('/homepage') }}">Home</a>
+      <a class="active" href="{{ url('/shop') }}">Shop</a>
+      <a href="{{ url('/orderlist') }}">MyOrders</a>
+      <a href="{{ url('/cartlist') }}">Cart <b>({{ $total }})</b></a>
+  
     </div>
+  </div>
 
 
 

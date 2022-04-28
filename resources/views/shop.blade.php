@@ -89,7 +89,7 @@
       <div class="header-right">
         <a  href="{{ url('/homepage') }}">Home</a>
         <a class="active" href="{{ url('/shop') }}">Shop</a>
-        <a href="{{ url('/feedback') }}">Feedback</a>
+        <a href="{{ url('/orderlist') }}">MyOrders</a>
         <a href="{{ url('/cartlist') }}">Cart <b>({{ $total }})</b></a>
     
       </div>
