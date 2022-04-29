@@ -298,11 +298,11 @@ input[type=text]:placeholder {
           <!-- Login Form -->
           <form action="{{ url('/createsubmit') }}" method="post">
             @csrf
-            <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail">
-            <input type="text" id="mobile" class="fadeIn second" name="mobile" placeholder="Contact Details">
-            <input type="text" id="Address" class="fadeIn second" name="Address" placeholder="Address Location">
-            <input type="text" id="pincode" class="fadeIn second" name="pincode" placeholder="Pincode">
-            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail" required>
+            <input type="text" id="mobile" class="fadeIn second" name="mobile" placeholder="Contact Details" required>
+            <input type="text" id="Address" class="fadeIn second" name="Address" placeholder="Address Location" required>
+            <input type="text" id="pincode" class="fadeIn second" name="pincode" placeholder="Pincode" required>
+            <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
             <input type="submit" class="fadeIn fourth" value="submit">
           </form>
       
